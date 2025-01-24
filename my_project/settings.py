@@ -27,8 +27,8 @@ DEBUG = True
 PORT = 8000
 ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'django-weather-app-railway-production.up.railway.app' ]
 
-CSRF_TRUSTED_ORIGINS = [ 'https://django-weather-app-railway-production.up.railway.app' ]
-
+# CSRF_TRUSTED_ORIGINS = [ 'https://django-weather-app-railway-production.up.railway.app' ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
