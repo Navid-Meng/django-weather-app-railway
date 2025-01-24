@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-l&^!3!01=*@_=wq68xxi(ja7j04@hlnt2+=+cvtpfb+(0!0pud
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-PORT = 8000
+PORT = os.environ.get("PORT", "8000")
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [ 'https://django-weather-app-railway-production.up.railway.app' ]
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
